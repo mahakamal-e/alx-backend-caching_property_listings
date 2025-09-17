@@ -2,7 +2,7 @@ from django.core.cache import cache
 from .models import Property
 
 
-def get_all_properties():
+def getallproperties():
     """
     Fetch all properties from cache if available,
     otherwise query the database and store in cache for 1 hour.
@@ -15,3 +15,4 @@ def get_all_properties():
         )
         cache.set("all_properties", properties, 3600)
     return properties
+
